@@ -1,0 +1,98 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:C_Small C1
+U 1 1 6316633C
+P 3200 4300
+F 0 "C1" H 3292 4346 50  0000 L CNN
+F 1 "22p" H 3292 4255 50  0000 L CNN
+F 2 "" H 3200 4300 50  0001 C CNN
+F 3 "~" H 3200 4300 50  0001 C CNN
+	1    3200 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:XTAL_GND X1
+U 1 1 63163A6D
+P 3600 4050
+F 0 "X1" H 3600 4342 60  0000 C CNN
+F 1 "XTAL_GND" H 3600 4236 60  0000 C CNN
+F 2 "" H 3600 4050 60  0000 C CNN
+F 3 "" H 3600 4050 60  0000 C CNN
+	1    3600 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 63164526
+P 4000 4300
+F 0 "C2" H 4092 4346 50  0000 L CNN
+F 1 "22p" H 4092 4255 50  0000 L CNN
+F 2 "" H 4000 4300 50  0001 C CNN
+F 3 "~" H 4000 4300 50  0001 C CNN
+	1    4000 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:GND #PWR?
+U 1 1 6316ABD6
+P 3600 4500
+F 0 "#PWR?" H 3600 4550 20  0001 C CNN
+F 1 "GND" H 3600 4559 30  0000 C CNN
+F 2 "" H 3600 4500 60  0000 C CNN
+F 3 "" H 3600 4500 60  0000 C CNN
+	1    3600 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:ATMEGA32U4 U1
+U 1 1 63160573
+P 5950 3250
+F 0 "U1" H 5975 4587 60  0000 C CNN
+F 1 "ATMEGA32U4" H 5975 4481 60  0000 C CNN
+F 2 "" H 5950 3250 60  0000 C CNN
+F 3 "" H 5950 3250 60  0000 C CNN
+	1    5950 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3700 3200 3700
+Wire Wire Line
+	3200 3700 3200 4050
+Wire Wire Line
+	3200 4050 3300 4050
+Wire Wire Line
+	3200 4050 3200 4200
+Connection ~ 3200 4050
+Wire Wire Line
+	3200 4400 3600 4400
+Wire Wire Line
+	3600 4400 3600 4250
+Wire Wire Line
+	3600 4400 3600 4500
+Connection ~ 3600 4400
+Wire Wire Line
+	3600 4400 4000 4400
+Wire Wire Line
+	4000 4200 4000 4050
+Wire Wire Line
+	3900 4050 4000 4050
+Wire Wire Line
+	4000 4050 4000 3800
+Wire Wire Line
+	4000 3800 4900 3800
+Connection ~ 4000 4050
+$EndSCHEMATC
