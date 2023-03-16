@@ -14,6 +14,7 @@ in placing the controller and other circuit parts into the completed switch matr
 
 todo:
 * fix above bug
-* replace usb port with jst connector for the daughterboard
+* place jst connector footprint on the circuitboard
 * tracing circuits
 * silk screening for fun
+* more? is there more?
