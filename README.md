@@ -12,7 +12,7 @@ https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-5---creating-the-pcb
 in placing the controller and other circuit parts into the completed switch matrix, i noticed that what should be GND pins are reading as 5v instead. Bug? looking for feedback on this.
 
 todo:
-fix above bug
-replace usb port with jst connector for the daughterboard
-tracing circuits
-silk screening for fun
+* fix above bug
+* replace usb port with jst connector for the daughterboard
+* tracing circuits
+* silk screening for fun
