@@ -129,7 +129,6 @@ Connection ~ 6450 1150
 Connection ~ 6450 2750
 Connection ~ 6500 3400
 Connection ~ 6550 3600
-Connection ~ 6550 5800
 Connection ~ 6600 1550
 Connection ~ 6650 1750
 Connection ~ 6650 4000
@@ -680,6 +679,10 @@ Wire Wire Line
 Wire Wire Line
 	5450 2750 5950 2750
 Wire Wire Line
+	5450 6800 5650 6800
+Wire Wire Line
+	5450 7100 5650 7100
+Wire Wire Line
 	5500 3200 5700 3200
 Wire Wire Line
 	5500 3400 6000 3400
@@ -799,12 +802,6 @@ Wire Wire Line
 	6550 3500 6550 3600
 Wire Wire Line
 	6550 4250 6550 3600
-Wire Wire Line
-	6550 5800 6550 5900
-Wire Wire Line
-	6550 5800 7000 5800
-Wire Wire Line
-	6550 5900 6300 5900
 Wire Wire Line
 	6600 1350 6800 1350
 Wire Wire Line
@@ -929,8 +926,6 @@ Wire Wire Line
 	7550 4700 7750 4700
 Wire Wire Line
 	7550 4900 8050 4900
-Wire Wire Line
-	7550 5800 7200 5800
 Wire Wire Line
 	7600 1350 7800 1350
 Wire Wire Line
@@ -1199,12 +1194,12 @@ Text GLabel 4950 900  1    50   Input ~ 0
 COL5
 Text GLabel 5450 900  1    50   Input ~ 0
 COL6
+Text GLabel 5650 6900 0    50   Input ~ 0
+D-
+Text GLabel 5650 7000 0    50   Input ~ 0
+D+
 Text GLabel 5950 900  1    50   Input ~ 0
 COL7
-Text GLabel 6300 6000 2    50   Input ~ 0
-D-
-Text GLabel 6300 6100 2    50   Input ~ 0
-D+
 Text GLabel 6450 900  1    50   Input ~ 0
 COL8
 Text GLabel 7000 900  1    50   Input ~ 0
@@ -1275,17 +1270,6 @@ F 3 "" H 5150 5850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ramau80aisoworkbench1-rescue:GND-keyboard_parts #PWR01
-U 1 1 641779CD
-P 6300 6300
-F 0 "#PWR01" H 6300 6350 20  0001 C CNN
-F 1 "GND" H 6300 6359 30  0000 C CNN
-F 2 "" H 6300 6300 60  0000 C CNN
-F 3 "" H 6300 6300 60  0000 C CNN
-	1    6300 6300
-	1    0    0    -1  
-$EndComp
-$Comp
 L ramau80aisoworkbench1-rescue:GND-keyboard_parts #PWR04
 U 1 1 64146FF3
 P 9550 6300
@@ -1330,25 +1314,14 @@ F 3 "" H 4650 6450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L power:VCC #PWR02
-U 1 1 64173BA3
-P 6550 5800
-F 0 "#PWR02" H 6550 5650 50  0001 C CNN
-F 1 "VCC" H 6565 5973 50  0000 C CNN
-F 2 "" H 6550 5800 50  0001 C CNN
-F 3 "" H 6550 5800 50  0001 C CNN
-	1    6550 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR08
-U 1 1 64176480
-P 7550 5800
-F 0 "#PWR08" H 7550 5650 50  0001 C CNN
-F 1 "+5V" H 7565 5973 50  0000 C CNN
-F 2 "" H 7550 5800 50  0001 C CNN
-F 3 "" H 7550 5800 50  0001 C CNN
-	1    7550 5800
+L power:VCC #PWR014
+U 1 1 00000000
+P 5450 6800
+F 0 "#PWR014" H 5450 6650 50  0001 C CNN
+F 1 "VCC" H 5450 6938 50  0000 C CNN
+F 2 "" H 5450 6800 50  0001 C CNN
+F 3 "" H 5450 6800 50  0001 C CNN
+	1    5450 6800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1360,6 +1333,17 @@ F 1 "+5V" H 9565 6023 50  0000 C CNN
 F 2 "" H 9550 5850 50  0001 C CNN
 F 3 "" H 9550 5850 50  0001 C CNN
 	1    9550 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR015
+U 1 1 00000000
+P 5450 7100
+F 0 "#PWR015" H 5450 6850 50  0001 C CNN
+F 1 "GND" H 5450 6937 50  0000 C CNN
+F 2 "" H 5450 7100 50  0001 C CNN
+F 3 "" H 5450 7100 50  0001 C CNN
+	1    5450 7100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1405,17 +1389,6 @@ F 2 "Resistor_SMD:R_0805_2012Metric" H 4200 5600 50  0001 C CNN
 F 3 "~" H 4200 5600 50  0001 C CNN
 	1    4200 5600
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Polyfuse_Small F1
-U 1 1 641701BB
-P 7100 5800
-F 0 "F1" V 7305 5800 50  0000 C CNN
-F 1 "500mA" V 7214 5800 50  0000 C CNN
-F 2 "Fuse:Fuse_1206_3216Metric" H 7150 5600 50  0001 L CNN
-F 3 "~" H 7100 5800 50  0001 C CNN
-	1    7100 5800
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:D_Small D_ESC100
@@ -2463,6 +2436,17 @@ F 3 "~" H 3900 5650 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
+L Connector:Conn_01x04_Socket J1
+U 1 1 00000000
+P 5850 6900
+F 0 "J1" H 5878 6875 50  0000 L CNN
+F 1 "Conn_01x04_Socket" H 5878 6800 50  0000 L CNN
+F 2 "" H 5850 6900 50  0001 C CNN
+F 3 "~" H 5850 6900 50  0001 C CNN
+	1    5850 6900
+	1    0    0    -1  
+$EndComp
+$Comp
 L ramau80aisoworkbench1-rescue:SW_PUSH-keyboard_parts SW1
 U 1 1 641637AA
 P 4700 5850
@@ -3429,17 +3413,6 @@ F 2 "MX_Only:MXOnly-1U-NoLED" H 9375 4525 60  0001 C CNN
 F 3 "" H 9375 4525 60  0001 C CNN
 	1    10000 4550
 	1    0    0    -1  
-$EndComp
-$Comp
-L random-keyboard-parts:Molex-0548190589 USB1
-U 1 1 6416A045
-P 6000 6100
-F 0 "USB1" V 6537 6067 60  0000 C CNN
-F 1 "Molex-0548190589" V 6431 6067 60  0000 C CNN
-F 2 "random-keyboard-parts:Molex-0548190589" H 6000 6100 60  0001 C CNN
-F 3 "" H 6000 6100 60  0001 C CNN
-	1    6000 6100
-	0    -1   -1   0   
 $EndComp
 $Comp
 L ramau80aisoworkbench1-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U1
